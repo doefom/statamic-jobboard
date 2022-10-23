@@ -19,17 +19,19 @@ class JobSchema extends Tags
     public function index(): bool|string
     {
 
+        // Check if job id was passed as parameter
         $jobId = $this->params->get('id');
-
         if (!$jobId) return false;
-
-        // Get the global entries for the hiring organization
-        $organization = GlobalSet::findByHandle('organization');
-
-        if (!$organization) return false;
 
         // Find the job to display the schema for by id
         $job = Entry::query()->where('collection', 'jobs')->find($jobId);
+        if (!$job) return false;
+
+        // Get the global entries for the hiring organization
+        $organization = GlobalSet::findByHandle('organization');
+        if (!$organization) return false;
+
+        // Sanitize job to safely get responsibilities, qualifications, etc.
         $job = $this->sanitizeJob($job);
 
         // Build job posting schema
