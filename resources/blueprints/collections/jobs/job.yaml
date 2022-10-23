@@ -16,6 +16,7 @@ sections:
           always_save: false
           input_type: text
           antlers: false
+          placeholder: 'Software Developer (m/f/d)'
       -
         handle: intro_section
         field:
