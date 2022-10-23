@@ -1,14 +1,16 @@
 # Jobboard
 
-> Jobboard is a Statamic addon that does something pretty neat.
+> Create and manage job postings for your organization with ease by utilizing reusable content blocks and much more.
 
 ## Features
 
 This addon does:
 
-- This
-- And this
-- And even this
+- Create and manage job postings with ease
+- Utilize reusable content blocks for sections like "Your Responsibilites" and more
+- Use multiple locations for a single job posting
+- Easily include job posting schema to work with Google for Jobs
+- Create one or more job posting templates to display your jobs with
 
 ## How to Install
 
@@ -20,5 +22,4 @@ composer require doefom/jobboard
 
 ## How to Use
 
-Here's where you can explain how to use this wonderful addon.
-# statamic-jobboard
+TODO
