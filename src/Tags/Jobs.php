@@ -20,7 +20,7 @@ class Jobs extends Tags
 
         $jobs = \Statamic\Facades\Entry::query()->where('collection', 'jobs')->get();
 
-        // Output linked items if exists.
+        // Sanitize the jobs so fields where reusable contents can be used always have a value.
         $jobs = $jobs->map(fn(\Statamic\Entries\Entry $job) => $this->sanitizeJob($job));
 
         return $jobs->toArray();
