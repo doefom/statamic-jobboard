@@ -5,6 +5,7 @@ sections:
       -
         handle: title
         field:
+          placeholder: 'My Organization GmbH'
           input_type: text
           antlers: false
           display: Title
@@ -34,6 +35,7 @@ sections:
       -
         handle: logo_url
         field:
+          placeholder: 'https://my-organization.com/logo.jpg'
           input_type: url
           antlers: false
           display: 'Logo URL'
