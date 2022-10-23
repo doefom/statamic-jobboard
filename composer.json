@@ -1,0 +1,25 @@
+{
+    "name": "doefom/jobboard",
+    "description": "Create and manage job postings for your organization with ease.",
+    "require": {
+        "php": "^8.0",
+        "statamic/cms": "^3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Doefom\\Jobboard\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Jobboard",
+            "description": "Create and manage job postings for your organization with ease."
+        },
+        "laravel": {
+            "providers": [
+                "Doefom\\Jobboard\\ServiceProvider"
+            ]
+        }
+    },
+    "license": "MIT"
+}

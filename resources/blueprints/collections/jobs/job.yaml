@@ -1,0 +1,328 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          display: Title
+          instructions_position: above
+          listable: hidden
+          visibility: visible
+          always_save: false
+          input_type: text
+          antlers: false
+      -
+        handle: intro
+        field:
+          collapse: false
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          remove_empty_nodes: false
+          display: Intro
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          instructions: 'Is often used to give a brief description of the company, its culture and more.'
+      -
+        handle: responsibilities_section
+        field:
+          display: Responsibilities
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: link_reusable_content_responsibilities
+        field:
+          default: false
+          display: 'Link reusable content'
+          type: toggle
+          icon: toggle
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          instructions: 'You can link entries of the collection "Jobs reusable contents" to display as the job''s responsibilities instead of defining custom content for this specific job. Consider this if you intend to use the exact same responsibilities for two or more jobs.'
+      -
+        handle: responsibilities
+        field:
+          collapse: false
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          remove_empty_nodes: false
+          display: Responsibilities
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if:
+            link_reusable_content_responsibilities: 'equals 0'
+          instructions: 'Describe the responsibilities the candidate will have when attending the job.'
+      -
+        handle: reusable_content_responsibilities
+        field:
+          mode: default
+          create: true
+          display: 'Reusable content for responsibilities'
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          max_items: 1
+          collections:
+            - jobs_reusable_contents
+          if:
+            link_reusable_content_responsibilities: 'equals 1'
+      -
+        handle: qualifications_section
+        field:
+          display: Qualifications
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: link_reusable_content_qualifications
+        field:
+          default: false
+          display: 'Link reusable content'
+          type: toggle
+          icon: toggle
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          instructions: 'You can link entries of the collection "Jobs reusable contents" to display as the job''s qualifications instead of defining custom content for this specific job. Consider this if you intend to use the exact same qualifications for two or more jobs.'
+      -
+        handle: qualifications
+        field:
+          collapse: false
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          remove_empty_nodes: false
+          display: Qualifications
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if:
+            link_reusable_content_qualifications: 'equals 0'
+      -
+        handle: reusable_content_qualifications
+        field:
+          max_items: 1
+          mode: default
+          create: true
+          collections:
+            - jobs_reusable_contents
+          display: 'Reusable content for qualifications'
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if:
+            link_reusable_content_qualifications: 'equals 1'
+      -
+        handle: incentives_section
+        field:
+          display: Incentives
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: link_reusable_content_incentives
+        field:
+          default: false
+          display: 'Link reusable content'
+          type: toggle
+          icon: toggle
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          instructions: 'You can link entries of the collection "Jobs reusable contents" to display as the job''s incentives instead of defining custom content for this specific job. Consider this if you intend to use the exact same incentives for two or more jobs.'
+      -
+        handle: incentives
+        field:
+          collapse: false
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          remove_empty_nodes: false
+          display: Incentives
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if:
+            link_reusable_content_incentives: 'equals 0'
+      -
+        handle: reusable_content_incentives
+        field:
+          max_items: 1
+          mode: default
+          create: true
+          collections:
+            - jobs_reusable_contents
+          display: 'Reusable content for incentives'
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if:
+            link_reusable_content_incentives: 'equals 1'
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: job_locations
+        field:
+          mode: default
+          create: true
+          collections:
+            - jobs_locations
+          display: 'Job Locations'
+          type: entries
+          icon: entries
+          instructions: 'Note: You may use multiple locations for one job.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: template
+        field:
+          hide_partials: true
+          blueprint: false
+          display: Template
+          type: template
+          icon: template
+          instructions: 'The template which renders the job in detail view.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+title: Job
