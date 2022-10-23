@@ -17,7 +17,6 @@ sections:
           placeholder: 'Responsibilities of a Senior Software Developer'
           input_type: text
           antlers: false
-          instructions: 'This title will not be visible publicly.'
       -
         handle: content
         field:
