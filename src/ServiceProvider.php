@@ -11,7 +11,8 @@ class ServiceProvider extends AddonServiceProvider
 {
 
     protected $tags = [
-        \Doefom\Jobboard\Tags\Jobs::class
+        \Doefom\Jobboard\Tags\Jobs::class,
+        \Doefom\Jobboard\Tags\JobSchema::class
     ];
 
     public function bootAddon()
@@ -20,6 +21,7 @@ class ServiceProvider extends AddonServiceProvider
 
         $this->publishes([
             __DIR__ . '/../content/collections' => base_path('content/collections'),
+            __DIR__ . '/../content/globals' => base_path('content/globals'),
             __DIR__ . '/../resources/blueprints' => resource_path('blueprints'),
         ], 'doefom/jobboard');
 

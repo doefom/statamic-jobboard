@@ -2,11 +2,13 @@
 
 namespace Doefom\Jobboard\Tags;
 
-use Statamic\Facades\Entry;
+use Doefom\Jobboard\Traits\JobTrait;
 use Statamic\Tags\Tags;
 
 class Jobs extends Tags
 {
+
+    use JobTrait;
 
     /**
      * The {{ jobs }} tag.
@@ -15,34 +17,14 @@ class Jobs extends Tags
      */
     public function index(): array|string
     {
-        $jobs = Entry::query()
-            ->where('collection', 'jobs')
-            ->get();
 
-        // Output linked
-        $jobs = $jobs->map(function ($job) {
+        $jobs = \Statamic\Facades\Entry::query()->where('collection', 'jobs')->get();
 
-            if ($job->link_reusable_content_responsibilities) {
-                $job->responsibilites = $job->reusable_content_responsibilities->content;
-            }
-
-            if ($job->link_reusable_content_qualifications) {
-                $job->qualifications = $job->reusable_content_qualifications->content;
-            }
-
-            if ($job->link_reusable_content_incentives) {
-                $job->incentives = $job->reusable_content_incentives->content;
-            }
-
-            if ($job->link_reusable_content_outro) {
-                $job->outro = $job->reusable_content_outro->content;
-            }
-
-            return $job;
-
-        });
+        // Output linked items if exists.
+        $jobs = $jobs->map(fn(\Statamic\Entries\Entry $job) => $this->sanitizeJob($job));
 
         return $jobs->toArray();
+
     }
 
 }

@@ -17,6 +17,28 @@ sections:
           input_type: text
           antlers: false
       -
+        handle: intro_section
+        field:
+          display: Intro
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: link_reusable_content_intro
+        field:
+          default: false
+          display: 'Link Reusable Content'
+          type: toggle
+          icon: toggle
+          instructions: 'You can link entries of the collection "Jobs reusable contents" to display as the job''s intro instead of defining custom content for this specific job. Consider this if you intend to use the exact same intro for two or more jobs.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
         handle: intro
         field:
           collapse: false
@@ -53,7 +75,26 @@ sections:
           instructions_position: above
           visibility: visible
           always_save: false
-          instructions: 'Is often used to give a brief description of the company, its culture and more.'
+          instructions: 'Is often used to give a brief intro of the company, its culture and more.'
+          if:
+            link_reusable_content_intro: 'equals 0'
+      -
+        handle: reusable_content_intro
+        field:
+          max_items: 1
+          mode: default
+          create: true
+          collections:
+            - jobs_reusable_contents
+          display: 'Reusable Content for Intro'
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if:
+            link_reusable_content_intro: 'equals 1'
       -
         handle: responsibilities_section
         field:
@@ -68,7 +109,7 @@ sections:
         handle: link_reusable_content_responsibilities
         field:
           default: false
-          display: 'Link reusable content'
+          display: 'Link Reusable Content'
           type: toggle
           icon: toggle
           listable: hidden
@@ -121,7 +162,7 @@ sections:
         field:
           mode: default
           create: true
-          display: 'Reusable content for responsibilities'
+          display: 'Reusable Content for Responsibilities'
           type: entries
           icon: entries
           listable: hidden
@@ -147,7 +188,7 @@ sections:
         handle: link_reusable_content_qualifications
         field:
           default: false
-          display: 'Link reusable content'
+          display: 'Link Reusable Content'
           type: toggle
           icon: toggle
           listable: hidden
@@ -194,6 +235,7 @@ sections:
           always_save: false
           if:
             link_reusable_content_qualifications: 'equals 0'
+          instructions: 'Describe the qualifications required for the job.'
       -
         handle: reusable_content_qualifications
         field:
@@ -202,7 +244,7 @@ sections:
           create: true
           collections:
             - jobs_reusable_contents
-          display: 'Reusable content for qualifications'
+          display: 'Reusable Content for Qualifications'
           type: entries
           icon: entries
           listable: hidden
@@ -225,7 +267,7 @@ sections:
         handle: link_reusable_content_incentives
         field:
           default: false
-          display: 'Link reusable content'
+          display: 'Link Reusable Content'
           type: toggle
           icon: toggle
           listable: hidden
@@ -272,6 +314,7 @@ sections:
           always_save: false
           if:
             link_reusable_content_incentives: 'equals 0'
+          instructions: 'Describe what incentives or benefits the candidate can expect when working for your company. This is one of the most important aspects for candidates when looking for a job.'
       -
         handle: reusable_content_incentives
         field:
@@ -344,7 +387,7 @@ sections:
           display: Outro
           type: bard
           icon: bard
-          instructions: 'The outro text that is usually displayed at the end of a job posting.'
+          instructions: 'Find some closing words which might also include some contact information. The outro text is usually displayed at the end of a job posting.'
           listable: hidden
           instructions_position: above
           visibility: visible
@@ -359,7 +402,7 @@ sections:
           create: true
           collections:
             - jobs_reusable_contents
-          display: 'Reusable content for outro'
+          display: 'Reusable Content for Outro'
           type: entries
           icon: entries
           listable: hidden
@@ -387,6 +430,69 @@ sections:
           visibility: visible
           always_save: false
       -
+        handle: published_at
+        field:
+          mode: single
+          time_enabled: false
+          time_seconds_enabled: false
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: 'Published at'
+          type: date
+          icon: date
+          instructions: 'The date when the job is first published.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: valid_through
+        field:
+          mode: single
+          time_enabled: false
+          time_seconds_enabled: false
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: 'Valid through'
+          type: date
+          icon: date
+          instructions: 'Determine how long the job is valid.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: employment_type
+        field:
+          options:
+            FULL_TIME: Fulltime
+            PART_TIME: Parttime
+            CONTRACTOR: Contractor
+            TEMPORARY: Temporary
+            INTERN: Intern
+            VOLUNTEER: Volunteer
+            PER_DIEM: 'Per Diem'
+            OTHER: Other
+          multiple: false
+          clearable: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          default: FULL_TIME
+          display: 'Employment Type'
+          type: select
+          icon: select
+          instructions: 'Assign a job type to the job so candidates will know what you are looking for.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
         handle: template
         field:
           hide_partials: true
@@ -404,4 +510,113 @@ sections:
         field:
           type: slug
           localizable: true
+      -
+        handle: salary_section
+        field:
+          display: Salary
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: currency
+        field:
+          options:
+            EUR: 'EUR (€)'
+            USD: 'USD ($)'
+          multiple: false
+          clearable: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          default: EUR
+          display: Currency
+          type: select
+          icon: select
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: unit
+        field:
+          options:
+            HOUR: Hour
+            DAY: Day
+            WEEK: Week
+            MONTH: Month
+            YEAR: Year
+          multiple: false
+          clearable: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          display: Unit
+          type: select
+          icon: select
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: is_salary_range
+        field:
+          default: false
+          display: 'Salary Range'
+          type: toggle
+          icon: toggle
+          instructions: 'Would you like to specify a salary range instead of a strict value?'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: salary
+        field:
+          input_type: text
+          antlers: false
+          display: Salary
+          type: text
+          icon: text
+          instructions: 'The exact salary for the job (not an estimate).'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if:
+            is_salary_range: 'equals 0'
+      -
+        handle: min_salary
+        field:
+          input_type: text
+          antlers: false
+          display: 'Min. Salary'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if:
+            is_salary_range: 'equals 1'
+      -
+        handle: max_salary
+        field:
+          input_type: text
+          antlers: false
+          display: 'Max. Salary'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if:
+            is_salary_range: 'equals 1'
 title: Job
