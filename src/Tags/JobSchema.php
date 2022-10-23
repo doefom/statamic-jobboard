@@ -23,12 +23,14 @@ class JobSchema extends Tags
 
         if (!$jobId) return false;
 
+        // Get the global entries for the hiring organization
+        $organization = GlobalSet::findByHandle('organization');
+
+        if (!$organization) return false;
+
         // Find the job to display the schema for by id
         $job = Entry::query()->where('collection', 'jobs')->find($jobId);
         $job = $this->sanitizeJob($job);
-
-        // Get the global entries for the hiring organization
-        $organization = GlobalSet::findByHandle('organization');
 
         // Build job posting schema
         $schema = [
