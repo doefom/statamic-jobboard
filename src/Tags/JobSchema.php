@@ -49,9 +49,15 @@ class JobSchema extends Tags
                 "sameAs" => $organization->in('default')->data()->get('url'),
                 "logo" => $organization->in('default')->data()->get('logo_url'),
             ],
-            "jobLocation" => $this->getJobLocationsFormatted($job),
             "baseSalary" => $this->getBaseSalaryFormatted($job),
         ];
+
+        // Check for remote work. If job is remote, 'jobLocation' is not required.
+        if ($job->is_full_remote) {
+            $schema["jobLocationType"] = "TELECOMMUTE";
+        } else {
+            $schema["jobLocation"] = $this->getJobLocationsFormatted($job);
+        }
 
         return '<script type="application/ld+json">' . json_encode($schema) . '</script>';
 

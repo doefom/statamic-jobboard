@@ -415,6 +415,28 @@ sections:
     display: Sidebar
     fields:
       -
+        handle: location_section
+        field:
+          display: Location
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: is_full_remote
+        field:
+          default: false
+          display: 'Is full remote'
+          type: toggle
+          icon: toggle
+          instructions: 'Check this if the job can be done completely remotely.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
         handle: job_locations
         field:
           mode: default
@@ -425,6 +447,55 @@ sections:
           type: entries
           icon: entries
           instructions: 'Note: You may use multiple locations for one job.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          unless:
+            is_full_remote: 'equals 1'
+      -
+        handle: employment_type_section
+        field:
+          display: 'Employment Type'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: employment_type
+        field:
+          options:
+            FULL_TIME: Fulltime
+            PART_TIME: Parttime
+            CONTRACTOR: Contractor
+            TEMPORARY: Temporary
+            INTERN: Intern
+            VOLUNTEER: Volunteer
+            PER_DIEM: 'Per Diem'
+            OTHER: Other
+          multiple: false
+          clearable: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          default: FULL_TIME
+          display: 'Employment Type'
+          type: select
+          icon: select
+          instructions: 'Assign a job type to the job so candidates will know what you are looking for.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: dates_and_timing_section
+        field:
+          display: 'Dates and Timing'
+          type: section
+          icon: section
           listable: hidden
           instructions_position: above
           visibility: visible
@@ -465,51 +536,6 @@ sections:
           instructions_position: above
           visibility: visible
           always_save: false
-      -
-        handle: employment_type
-        field:
-          options:
-            FULL_TIME: Fulltime
-            PART_TIME: Parttime
-            CONTRACTOR: Contractor
-            TEMPORARY: Temporary
-            INTERN: Intern
-            VOLUNTEER: Volunteer
-            PER_DIEM: 'Per Diem'
-            OTHER: Other
-          multiple: false
-          clearable: false
-          searchable: true
-          taggable: false
-          push_tags: false
-          cast_booleans: false
-          default: FULL_TIME
-          display: 'Employment Type'
-          type: select
-          icon: select
-          instructions: 'Assign a job type to the job so candidates will know what you are looking for.'
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: template
-        field:
-          hide_partials: true
-          blueprint: false
-          display: Template
-          type: template
-          icon: template
-          instructions: 'The template which renders the job in detail view.'
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-          always_save: false
-      -
-        handle: slug
-        field:
-          type: slug
-          localizable: true
       -
         handle: salary_section
         field:
@@ -619,4 +645,32 @@ sections:
           always_save: false
           if:
             is_salary_range: 'equals 1'
+      -
+        handle: template_section
+        field:
+          display: Template
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: template
+        field:
+          hide_partials: true
+          blueprint: false
+          display: Template
+          type: template
+          icon: template
+          instructions: 'The template which renders the job in detail view.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
 title: Job
