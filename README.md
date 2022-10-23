@@ -21,3 +21,4 @@ composer require doefom/jobboard
 ## How to Use
 
 Here's where you can explain how to use this wonderful addon.
+# statamic-jobboard
