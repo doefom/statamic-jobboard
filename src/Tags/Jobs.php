@@ -34,6 +34,10 @@ class Jobs extends Tags
                 $job->incentives = $job->reusable_content_incentives->content;
             }
 
+            if ($job->link_reusable_content_outro) {
+                $job->outro = $job->reusable_content_outro->content;
+            }
+
             return $job;
 
         });

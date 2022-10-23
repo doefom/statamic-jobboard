@@ -289,6 +289,85 @@ sections:
           always_save: false
           if:
             link_reusable_content_incentives: 'equals 1'
+      -
+        handle: outro_section
+        field:
+          display: Outro
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: link_reusable_content_outro
+        field:
+          default: false
+          display: 'Link reusable content'
+          type: toggle
+          icon: toggle
+          instructions: 'You can link entries of the collection "Jobs reusable contents" to display as the job''s outro instead of defining custom content for this specific job. Consider this if you intend to use the exact same incentives for two or more jobs.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: outro
+        field:
+          collapse: false
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          remove_empty_nodes: false
+          display: Outro
+          type: bard
+          icon: bard
+          instructions: 'The outro text that is usually displayed at the end of a job posting.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if:
+            link_reusable_content_outro: 'equals 0'
+      -
+        handle: reusable_content_outro
+        field:
+          max_items: 1
+          mode: default
+          create: true
+          collections:
+            - jobs_reusable_contents
+          display: 'Reusable content for outro'
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          if:
+            link_reusable_content_outro: 'equals 1'
   sidebar:
     display: Sidebar
     fields:
