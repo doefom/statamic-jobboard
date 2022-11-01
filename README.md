@@ -1,6 +1,6 @@
 # Jobboard
 
-Create and manage job postings for your organization with ease by utilizing reusable content blocks and much more.
+Create and manage few or many job postings for your organization with ease by utilizing reusable content blocks and much more.
 
 ## Features
 
