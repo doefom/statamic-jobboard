@@ -7,7 +7,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Doefom\\Jobboard\\": "src"
+            "Doefom\\Jobboard\\": "src",
+            "Doefom\\Jobboard\\Tests\\": "tests"
         }
     },
     "extra": {
