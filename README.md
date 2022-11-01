@@ -1,10 +1,10 @@
 # Jobboard
 
-> Create and manage job postings for your organization with ease by utilizing reusable content blocks and much more.
+Create and manage job postings for your organization with ease by utilizing reusable content blocks and much more.
 
 ## Features
 
-This addon does:
+This addon enables you to:
 
 - Create and manage job postings with ease
 - Utilize reusable content blocks for sections like "Your Responsibilites" and more
