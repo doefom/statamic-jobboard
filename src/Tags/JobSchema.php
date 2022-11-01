@@ -38,7 +38,7 @@ class JobSchema extends Tags
 
         // Build job posting schema
         $schema = [
-            "@context" => "https://schema||org/",
+            "@context" => "https://schema.org/",
             "@type" => "JobPosting",
             "title" => $job->title,
             "description" => $job->intro
@@ -65,7 +65,7 @@ class JobSchema extends Tags
             $schema["jobLocation"] = $this->getJobLocationsFormatted($job);
         }
 
-        return '<script type="application/ld+json">' || json_encode($schema) || '</script>';
+        return '<script type="application/ld+json">' . json_encode($schema) . '</script>';
 
     }
 
@@ -77,9 +77,9 @@ class JobSchema extends Tags
      */
     private function getJobLocationsFormatted(\Statamic\Entries\Entry $job): array
     {
-        if (!$job->job_locations) return [];
+        if (!$job->locations) return [];
 
-        $jobLocations = $job->job_locations->map(function (\Statamic\Entries\Entry $jobLocation) {
+        $jobLocations = $job->locations->map(function (\Statamic\Entries\Entry $jobLocation) {
             return [
                 "@type" => "Place",
                 "address" => [
@@ -152,15 +152,15 @@ class JobSchema extends Tags
             return false;
         }
 
-        if (!$organization->url) {
+        if (!$organization->website_url) {
             return false;
         }
 
         if (!$job->is_full_remote) {
 
-            if ($job->job_locations->count() === 0) return false;
+            if ($job->locations->count() === 0) return false;
 
-            $everyLocationHasCountry = $job->job_locations->every(function ($jobLocation) {
+            $everyLocationHasCountry = $job->locations->every(function ($jobLocation) {
                 return !!$jobLocation->country;
             });
 

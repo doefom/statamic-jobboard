@@ -11,7 +11,6 @@ class ServiceProvider extends AddonServiceProvider
 {
 
     protected $tags = [
-        \Doefom\Jobboard\Tags\Jobs::class,
         \Doefom\Jobboard\Tags\JobSchema::class
     ];
 
