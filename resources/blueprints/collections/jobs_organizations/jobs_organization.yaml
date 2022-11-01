@@ -1,3 +1,4 @@
+title: 'Jobs Organization'
 sections:
   main:
     display: Main
@@ -5,14 +6,15 @@ sections:
       -
         handle: title
         field:
-          placeholder: 'My Organization GmbH'
+          type: text
+          required: true
+          placeholder: 'Organization GmbH'
           input_type: text
           antlers: false
           display: Title
-          type: text
           icon: text
           instructions: 'The name of the organization.'
-          listable: hidden
+          listable: true
           instructions_position: above
           visibility: visible
           always_save: false
@@ -21,28 +23,36 @@ sections:
       -
         handle: url
         field:
-          placeholder: 'https://my-organization.com/'
+          placeholder: 'https://organization.com/'
           input_type: url
           antlers: false
           display: 'Website URL'
           type: text
           icon: text
-          instructions: 'The URL to your organizations website.'
-          listable: hidden
+          instructions: "The URL to the organization's website."
+          listable: true
           instructions_position: above
           visibility: visible
           always_save: false
       -
         handle: logo_url
         field:
-          placeholder: 'https://my-organization.com/logo.jpg'
+          placeholder: 'https://organization.com/logo.jpg'
           input_type: url
           antlers: false
           display: 'Logo URL'
           type: text
           icon: text
           instructions: "The URL to the organization's logo."
-          listable: hidden
+          listable: true
           instructions_position: above
           visibility: visible
           always_save: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
