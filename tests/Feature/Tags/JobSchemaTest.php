@@ -23,16 +23,22 @@ class JobSchemaTest extends TestCase
     {
 
         $jobLocation = Entry::make()->collection('jobs_locations')->data([
-            'id' => '12345',
             'city' => 'Berlin',
             'street' => 'Straße 01',
             'postalcode' => '16243',
             'state' => 'Baden-Württemberg',
             'country' => 'DE'
         ]);
+        $jobLocation->save();
+
+        $jobOrganization = Entry::make()->collection('jobs_organizations')->data([
+            'title' => 'My Organization GmbH',
+            'url' => 'https://emplify-software.de',
+            'logo_url' => 'https://emplify-software.de/wp-content/uploads/2020/03/emplify_software_logo.png'
+        ]);
+        $jobOrganization->save();
 
         $job = Entry::make()->collection('jobs')->data([
-            'id' => '123',
             'title' => "Software Developer (m/f/d)",
             'intro' => "<p>This is a super cool organization we have here.</p>",
             'responsibilities' => "<p>Responsibilities</p>",
@@ -40,11 +46,16 @@ class JobSchemaTest extends TestCase
             'incentives' => "<p>Incentives</p>",
             'outro' => "<p>The outro</p>",
             'is_full_remote' => false,
-            'job_locations' => [$jobLocation->id],
+            'locations' => [$jobLocation->id],
+            'organization' => $jobOrganization->id
         ]);
+        $job->save();
 
-//        $this->assertTrue((new JobSchema())->requiredFieldsExist($job, $organization));
+        $this->assertFalse((new JobSchema())->requiredFieldsExist($job));
 
+        $jobLocation->delete();
+        $jobOrganization->delete();
+        $job->delete();
     }
 
 }

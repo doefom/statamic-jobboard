@@ -27,14 +27,14 @@ class JobSchema extends Tags
         if (!$job) return false;
 
         // Get the global entries for the hiring organization
-        $organization = GlobalSet::findByHandle('organization');
+        $organization = $job->organization;
         if (!$organization) return false;
 
         // Sanitize job to safely get responsibilities, qualifications, etc.
         $job = $this->sanitizeJob($job);
 
         // Check if all necessary fields are provided
-        if (!$this->requiredFieldsExist($job, $organization)) return false;
+        if (!$this->requiredFieldsExist($job)) return false;
 
         // Build job posting schema
         $schema = [
@@ -127,23 +127,31 @@ class JobSchema extends Tags
     /**
      * Check if all fields required for the job posting schema exist.
      * @param $job
-     * @param $organization
      * @return bool
      */
-    public function requiredFieldsExist($job, $organization): bool
+    public function requiredFieldsExist($job): bool
     {
         if (!$job->published_at) {
             return false;
         }
+
         if (!($job->intro || $job->responsibilities || $job->qualifications || $job->incentives || $job->outro)) {
             return false;
         }
+
         if (!$job->published_at) {
             return false;
         }
+
+        $organization = $job->organization;
+        if (!$organization) {
+            return false;
+        }
+
         if (!$organization->title) {
             return false;
         }
+
         if (!$organization->url) {
             return false;
         }

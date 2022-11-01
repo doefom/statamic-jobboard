@@ -464,7 +464,7 @@ sections:
           visibility: visible
           always_save: false
       -
-        handle: job_locations
+        handle: locations
         field:
           mode: default
           create: true
