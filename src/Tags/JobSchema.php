@@ -161,7 +161,7 @@ class JobSchema extends Tags
             if ($job->locations->count() === 0) return false;
 
             $everyLocationHasCountry = $job->locations->every(function ($jobLocation) {
-                return !!$jobLocation->country;
+                return !!$jobLocation->get('country');
             });
 
             if (!$everyLocationHasCountry) return false;

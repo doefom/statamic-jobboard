@@ -630,7 +630,7 @@ sections:
       -
         handle: salary
         field:
-          input_type: text
+          input_type: number
           antlers: false
           display: Salary
           type: text
