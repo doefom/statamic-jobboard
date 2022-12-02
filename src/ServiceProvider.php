@@ -2,8 +2,7 @@
 
 namespace Doefom\Jobboard;
 
-use Illuminate\Support\Facades\Artisan;
-use Statamic\Facades\CP\Nav;
+use Doefom\Jobboard\Tags\JobSchema;
 use Statamic\Providers\AddonServiceProvider;
 use Statamic\Statamic;
 
@@ -11,21 +10,25 @@ class ServiceProvider extends AddonServiceProvider
 {
 
     protected $tags = [
-        \Doefom\Jobboard\Tags\JobSchema::class
+        JobSchema::class
     ];
 
-    public function bootAddon()
-    {
-        parent::bootAddon();
+    protected $routes = [
+        'cp' => __DIR__ . '/../routes/cp.php',
+    ];
 
-        $this->publishes([
-            __DIR__ . '/../content/collections' => base_path('content/collections'),
-            __DIR__ . '/../resources/blueprints' => resource_path('blueprints'),
-        ], 'doefom/jobboard');
-
-        Statamic::afterInstalled(function ($command) {
-            $command->call('vendor:publish', ['--tag' => 'doefom/jobboard']);
-        });
-    }
+//    public function bootAddon()
+//    {
+//        parent::bootAddon();
+//
+//        $this->publishes([
+//            __DIR__ . '/../content/collections' => base_path('content/collections'),
+//            __DIR__ . '/../resources/blueprints' => resource_path('blueprints'),
+//        ], 'doefom/jobboard');
+//
+//        Statamic::afterInstalled(function ($command) {
+//            $command->call('vendor:publish', ['--tag' => 'doefom/jobboard']);
+//        });
+//    }
 
 }
