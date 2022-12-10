@@ -1,0 +1,4 @@
+let mix = require("laravel-mix");
+
+mix
+  .js("resources/js/cp.js", "dist/js").vue({version: 2})

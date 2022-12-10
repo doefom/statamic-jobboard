@@ -1,0 +1,548 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          display: Title
+          instructions_position: above
+          listable: hidden
+          visibility: visible
+          always_save: false
+          input_type: text
+          antlers: false
+          placeholder: 'Software Developer (m/f/d)'
+      -
+        handle: intro_section
+        field:
+          display: Intro
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: intro
+        field:
+          collapse: false
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          remove_empty_nodes: false
+          display: Intro
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          instructions: 'Is often used to give a brief intro of the company, its culture and more.'
+      -
+        handle: responsibilities_section
+        field:
+          display: Responsibilities
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: responsibilities
+        field:
+          collapse: false
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          remove_empty_nodes: false
+          display: Responsibilities
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          instructions: 'Describe the responsibilities the candidate will have when attending the job.'
+      -
+        handle: qualifications_section
+        field:
+          display: Qualifications
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: qualifications
+        field:
+          collapse: false
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          remove_empty_nodes: false
+          display: Qualifications
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          instructions: 'Describe the qualifications required for the job.'
+      -
+        handle: incentives_section
+        field:
+          display: Incentives
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: incentives
+        field:
+          collapse: false
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          remove_empty_nodes: false
+          display: Incentives
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          instructions: 'Describe what incentives or benefits the candidate can expect when working for your company. This is one of the most important aspects for candidates when looking for a job.'
+      -
+        handle: outro_section
+        field:
+          display: Outro
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: outro
+        field:
+          collapse: false
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          remove_empty_nodes: false
+          display: Outro
+          type: bard
+          icon: bard
+          instructions: 'Find some closing words which might also include some contact information. The outro text is usually displayed at the end of a job posting.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: organization_section
+        field:
+          display: Organization
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+#      -
+#        handle: organization
+#        field:
+#          max_items: 1
+#          mode: default
+#          create: true
+#          collections:
+#            - organization
+#          display: Organization
+#          type: entries
+#          icon: entries
+#          instructions: 'The organization the job belongs to. Each job can have one organization only.'
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#      -
+#        handle: location_section
+#        field:
+#          display: Location
+#          type: section
+#          icon: section
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#      -
+#        handle: is_full_remote
+#        field:
+#          default: false
+#          display: 'Is full remote'
+#          type: toggle
+#          icon: toggle
+#          instructions: 'Check this if the job can be done completely remotely.'
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#      -
+#        handle: locations
+#        field:
+#          mode: default
+#          create: true
+#          collections:
+#            - jobs_locations
+#          display: 'Job Locations'
+#          type: entries
+#          icon: entries
+#          instructions: 'Note: You may use multiple locations for one job.'
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#          unless:
+#            is_full_remote: 'equals 1'
+#      -
+#        handle: employment_type_section
+#        field:
+#          display: 'Employment Type'
+#          type: section
+#          icon: section
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#      -
+#        handle: employment_type
+#        field:
+#          options:
+#            FULL_TIME: Fulltime
+#            PART_TIME: Parttime
+#            CONTRACTOR: Contractor
+#            TEMPORARY: Temporary
+#            INTERN: Intern
+#            VOLUNTEER: Volunteer
+#            PER_DIEM: 'Per Diem'
+#            OTHER: Other
+#          multiple: false
+#          clearable: false
+#          searchable: true
+#          taggable: false
+#          push_tags: false
+#          cast_booleans: false
+#          default: FULL_TIME
+#          display: 'Employment Type'
+#          type: select
+#          icon: select
+#          instructions: 'Assign a job type to the job so candidates will know what you are looking for.'
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#      -
+#        handle: dates_and_timing_section
+#        field:
+#          display: 'Dates and Timing'
+#          type: section
+#          icon: section
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#      -
+#        handle: published_at
+#        field:
+#          mode: single
+#          time_enabled: false
+#          time_seconds_enabled: false
+#          full_width: false
+#          inline: false
+#          columns: 1
+#          rows: 1
+#          display: 'Published at'
+#          type: date
+#          icon: date
+#          instructions: 'The date when the job is first published.'
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#      -
+#        handle: valid_through
+#        field:
+#          mode: single
+#          time_enabled: false
+#          time_seconds_enabled: false
+#          full_width: false
+#          inline: false
+#          columns: 1
+#          rows: 1
+#          display: 'Valid through'
+#          type: date
+#          icon: date
+#          instructions: 'Determine how long the job is valid.'
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#      -
+#        handle: salary_section
+#        field:
+#          display: Salary
+#          type: section
+#          icon: section
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#      -
+#        handle: currency
+#        field:
+#          options:
+#            EUR: 'EUR (€)'
+#            USD: 'USD ($)'
+#          multiple: false
+#          clearable: false
+#          searchable: true
+#          taggable: false
+#          push_tags: false
+#          cast_booleans: false
+#          default: EUR
+#          display: Currency
+#          type: select
+#          icon: select
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#      -
+#        handle: unit
+#        field:
+#          options:
+#            HOUR: Hour
+#            DAY: Day
+#            WEEK: Week
+#            MONTH: Month
+#            YEAR: Year
+#          multiple: false
+#          clearable: false
+#          searchable: true
+#          taggable: false
+#          push_tags: false
+#          cast_booleans: false
+#          display: Unit
+#          type: select
+#          icon: select
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#      -
+#        handle: is_salary_range
+#        field:
+#          default: false
+#          display: 'Salary Range'
+#          type: toggle
+#          icon: toggle
+#          instructions: 'Would you like to specify a salary range instead of a strict value?'
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#      -
+#        handle: salary
+#        field:
+#          input_type: number
+#          antlers: false
+#          display: Salary
+#          type: text
+#          icon: text
+#          instructions: 'The exact salary for the job (not an estimate).'
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#          if:
+#            is_salary_range: 'equals 0'
+#      -
+#        handle: min_salary
+#        field:
+#          input_type: text
+#          antlers: false
+#          display: 'Min. Salary'
+#          type: text
+#          icon: text
+#          width: 50
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#          if:
+#            is_salary_range: 'equals 1'
+#      -
+#        handle: max_salary
+#        field:
+#          input_type: text
+#          antlers: false
+#          display: 'Max. Salary'
+#          type: text
+#          icon: text
+#          width: 50
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#          if:
+#            is_salary_range: 'equals 1'
+#      -
+#        handle: template_section
+#        field:
+#          display: Template
+#          type: section
+#          icon: section
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#      -
+#        handle: template
+#        field:
+#          hide_partials: true
+#          blueprint: false
+#          display: Template
+#          type: template
+#          icon: template
+#          instructions: 'The template which renders the job in detail view.'
+#          listable: hidden
+#          instructions_position: above
+#          visibility: visible
+#          always_save: false
+#      -
+#        handle: slug
+#        field:
+#          type: slug
+#          localizable: true
+title: Job

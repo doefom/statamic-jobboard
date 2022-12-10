@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npx mix",
+    "development": "npx mix",
+    "watch": "npx mix watch",
+    "watch-poll": "npx mix watch -- --watch-options-poll=1000",
+    "hot": "npx mix watch --hot",
+    "prod": "npx mix --production",
+    "production": "npx mix --production",
+    "format": "prettier 'resources/**/*.{css,js,json,css,ts,tsx,vue}' '*.{js,css}' --write"
+  },
+  "dependencies": {
+    "laravel-mix": "6.0.49",
+    "vue": "2.7.10",
+    "vue-template-compiler": "2.7.10"
+  },
+  "devDependencies": {
+    "prettier": "2.7.1",
+    "vue-loader": "15.10.0"
+  }
+}

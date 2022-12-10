@@ -2,9 +2,11 @@
 
 namespace Doefom\Jobboard;
 
+use Doefom\Jobboard\Repositories\JobRepository;
+use Doefom\Jobboard\Stores\JobsStore;
 use Doefom\Jobboard\Tags\JobSchema;
 use Statamic\Providers\AddonServiceProvider;
-use Statamic\Statamic;
+use Statamic\Stache\Stache;
 
 class ServiceProvider extends AddonServiceProvider
 {
@@ -16,6 +18,19 @@ class ServiceProvider extends AddonServiceProvider
     protected $routes = [
         'cp' => __DIR__ . '/../routes/cp.php',
     ];
+
+    protected $scripts = [
+        __DIR__ . '/../dist/js/cp.js',
+    ];
+
+    public function bootAddon()
+    {
+
+        $jobsStore = new JobsStore();
+        $jobsStore->directory(config('jobboard.jobs')); // , base_path('content/jobs')
+        app(Stache::class)->registerStore($jobsStore);
+
+    }
 
 //    public function bootAddon()
 //    {
