@@ -11,8 +11,13 @@ class JobBoardApiController extends Controller
 
     public function index(Request $request)
     {
-        $jobs = Job::all();
-        return $jobs;
+        return Job::all();
+    }
+
+    public function create(Request $request)
+    {
+        $job = Job::make()->title($request->get('title'));
+        $job->save();
     }
 
 }

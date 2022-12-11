@@ -5,9 +5,7 @@
 @section('content')
     <h1>TEST</h1>
 
-{{--    <job-listing--}}
-
-{{--    >--}}
+{{--    <job-listing>--}}
 {{--    </job-listing>--}}
 
 @endsection
